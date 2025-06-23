@@ -1,41 +1,70 @@
-
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
 }
-header{
+
+header {
     position: absolute;
     width: 100%;
     top: 0px;
-    background-color: #333333; 
+    background-color: #333333;
     height: 4em;
     max-height: 100%;
     color: white;
     align-content: center;
 }
-a{
+
+a {
     color: white;
     text-decoration: none;
 }
-body header .menu{
-    
+
+body header .menu {
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: center;
     justify-content: center;
 }
-body main{
+
+body main {
     padding-top: 5em;
 }
-body main img{
+
+body main img {
     height: 100px;
     max-height: 100%;
 }
 
-footer{
-    background-color: #333333; 
+body main .input-block {
+    padding: 40px 30px 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid grey;
+    background-color: white;
+    width: 400px;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100px;
+    background-color: #333333;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+footer {
+    background-color: #333333;
     height: 4em;
     max-height: 100%;
     color: white;
