@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
-    </head>
-    <body>
-        <header>
-            <div class="menu">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-            </div>
-        </header>
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-        <footer>&copy 2025 My Flask App</footer>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </header>
+    <main>
+        <h4 style="color: forestgreen;">{{message_check}}<h4>
+                {% block content %}
+                {% endblock %}
+    </main>
+    <footer>&copy 2025 My Flask App</footer>
+</body>
 
 </html>

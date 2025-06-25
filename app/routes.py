@@ -3,7 +3,7 @@ from app import app
 
 
 @app.route("/")
-def home():
+def form():
     return render_template("home.html")
 
 
@@ -20,10 +20,11 @@ def contact():
 @app.route("/submit", methods=["POST", "GET"])
 def submit():
     if request.method == "POST":
-        name = request.contact.get("name")
-        email = request.contact.get("email")
-        text = request.contact.get("text")
+        message_check = "Your message has been sen successfully!"
+        name = request.form.get("name")
+        email = request.form.get("email")
+        text = request.form.get("text")
 
-        return render_template("success.html", name=name, email=email, text=text)
+        return render_template("contact.html", name=name, email=email, text=text, message_check=message_check)
     else:
         return redirect(url_for("/contact"))
