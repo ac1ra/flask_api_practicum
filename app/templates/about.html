@@ -5,5 +5,9 @@
 <p>We are a team of passopnate developers bulding web applications with Flask.</p>
 <label>Mission: To teach programming effectively</label><br>
 <label>Vision: Empower people to build their ideas</label><br>
-<label>Values: Collaboration, innovation, and learing</label>
+<label>Values: Collaboration, innovation, and learing</label><br><br>
+<p>List of employees:</p>
+{%for member in team_members_html%}
+<label>Name: {{member.name}}, role: {{member.role}}</label><br>
+{%endfor%}
 {% endblock %}

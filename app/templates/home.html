@@ -6,4 +6,9 @@
 <div class="image-block">
     <img src="{{url_for('static', filename='img/logo.png')}}" alt="logo">
 </div>
+<div class="datetime-block">
+    <p>Сегодня: {{current_time_html.strftime("%A") | capitalize}}, {{current_time_html.strftime("%B %d, %Y, %X") |
+        capitalize}}
+    </p>
+</div>
 {% endblock %}
