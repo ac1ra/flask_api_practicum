@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 {% block title %} Contact {% endblock %}
 {% block content %}
-<h2>{{message_check_html}}</h2>
-<h1>Test Page</h1>
-<p>{{dict_storage_html}}</p>
-<p>{{dict_storage_html[name_html]=email_html}}</p>
-<p>{{name_html}}, {{email_html}}</p>
+<h2 style="color: green;">{{message_check_html}}</h2>
+<h1>Отдел заботы о клиентах:</h1>
+{%for key,value in dict_storage_html.items()%}
+{%if key == 'name'%}
+<p>Имя: {{value}}</p>
+{%elif key == 'email'%}
+<p>Email: {{value}}</p>
+{%elif key == 'city'%}
+<p>Город: {{value}}</p>
+{%elif key == 'street'%}
+<p>Улица: {{value}}</p>
+{%elif key == 'post_zip'%}
+<p>Почтовый индекс: {{value}}</p>
+{%elif key == 'message'%}
+<p>Сообщение: {{value}}</p>
+{%endif%}
+{%endfor%}
 {% endblock %}

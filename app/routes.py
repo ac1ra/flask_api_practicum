@@ -22,7 +22,7 @@ def about():
     return render_template("about.html", team_members_html=team_members)
 
 
-dict_storage = {'name': "Alex", 'email': "alex@al.com"}
+dict_storage = {}
 
 
 @app.route("/contact")
@@ -36,8 +36,18 @@ def submit():
         message_check = "Your message has been sen successfully!"
         name = request.form.get("name")
         email = request.form.get("email")
-        text = request.form.get("text")
+        city = request.form.get("city")
+        street = request.form.get("street")
+        post_zip = request.form.get("post_zip")
+        message = request.form.get("message")
 
-        return render_template("page.html", name_html=name, email_html=email, text_html=text, message_check_html=message_check, dict_storage_html=dict_storage)
+        dict_storage['name'] = name
+        dict_storage['email'] = email
+        dict_storage['city'] = city
+        dict_storage['street'] = street
+        dict_storage['post_zip'] = post_zip
+        dict_storage['message'] = message
+
+        return render_template("page.html", message_check_html=message_check, dict_storage_html=dict_storage)
     else:
         return redirect(url_for("/contact"))
